@@ -26,6 +26,9 @@ public class Employee {
     @Column
     private String department;
 
+    @Column
+    private String password;
+
 //    @OneToMany(mappedBy = "employee", fetch = FetchType.EAGER)
 //    private List<Salary> salaryList;
 
@@ -33,11 +36,14 @@ public class Employee {
 
     }
 
-    public Employee(int employee_id, String first_name, String last_name, String email, String title, String photograph_path, String department) {
+
+
+    public Employee(int employee_id, String first_name, String last_name, String email, String password, String title, String photograph_path, String department) {
         this.employee_id = employee_id;
         this.first_name = first_name;
         this.last_name = last_name;
         this.email = email;
+        this.password = password;
         this.title = title;
         this.photograph_path = photograph_path;
         this.department = department;
@@ -75,6 +81,14 @@ public class Employee {
         this.email = email;
     }
 
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
+
     public String getTitle() {
         return title;
     }
@@ -99,7 +113,21 @@ public class Employee {
         this.department = department;
     }
 
-//    public List<Salary> getSalaryList() {
+    @Override
+    public String toString() {
+        return "Employee{" +
+                "employee_id=" + employee_id +
+                ", first_name='" + first_name + '\'' +
+                ", last_name='" + last_name + '\'' +
+                ", email='" + email + '\'' +
+                ", title='" + title + '\'' +
+                ", photograph_path='" + photograph_path + '\'' +
+                ", department='" + department + '\'' +
+                ", password='" + password + '\'' +
+                '}';
+    }
+
+    //    public List<Salary> getSalaryList() {
 //        return salaryList;
 //    }
 //

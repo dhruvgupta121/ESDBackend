@@ -53,18 +53,18 @@ public class InitializeDB {
             salaryList.add(salaryObj);
         }
 
-        for(int i = 0; i < employees.size(); i++) {
-            List<Object> employee = employees.get(i);
-            Employee employeeObj = new Employee((Integer) employee.get(0), (String)employee.get(1), (String)employee.get(2), (String)employee.get(3), (String)employee.get(4), (String)employee.get(5), (String)employee.get(6));
-
-            salaryList.get(i*3).setEmployee(employeeObj);
-            salaryList.get(i*3+1).setEmployee(employeeObj);
-            salaryList.get(i*3+2).setEmployee(employeeObj);
-
-            employeeDAO.createEmployee(employeeObj);
-            salaryDAO.createSalary(salaryList.get(i*3));
-            salaryDAO.createSalary(salaryList.get(i*3+1));
-            salaryDAO.createSalary(salaryList.get(i*3+2));
-        }
+//        for(int i = 0; i < employees.size(); i++) {
+//            List<Object> employee = employees.get(i);
+////            Employee employeeObj = new Employee((Integer) employee.get(0), (String)employee.get(1), (String)employee.get(2), (String)employee.get(3), (String)employee.get(4), (String)employee.get(5), (String)employee.get(6));
+//
+//            salaryList.get(i*3).setEmployee(employeeObj);
+//            salaryList.get(i*3+1).setEmployee(employeeObj);
+//            salaryList.get(i*3+2).setEmployee(employeeObj);
+//
+//            employeeDAO.createEmployee(employeeObj);
+//            salaryDAO.createSalary(salaryList.get(i*3));
+//            salaryDAO.createSalary(salaryList.get(i*3+1));
+//            salaryDAO.createSalary(salaryList.get(i*3+2));
+//        }
     }
 }

@@ -28,10 +28,11 @@ public class EmployeeDAOImpl implements EmployeeDAO {
     public Employee login(Employee employee) {
         try (Session session = HibernateSessionUtil.getSession();) {
             String employeeEmail = employee.getEmail();
+            String employeePassword = employee.getPassword();
 
             List<Object> result = new ArrayList<Object>(
-                    session.createQuery("FROM Employee WHERE email = :employeeEmail")
-                            .setParameter("employeeEmail", employeeEmail)
+                    session.createQuery("FROM Employee WHERE email = :employeeEmail and password =  :employeePassword")
+                            .setParameter("employeeEmail", employeeEmail).setParameter("employeePassword", employeePassword)
                             .list());
 
             if(result.size() == 0) return null;

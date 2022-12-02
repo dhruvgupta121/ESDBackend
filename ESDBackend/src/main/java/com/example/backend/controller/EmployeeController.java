@@ -16,6 +16,10 @@ public class EmployeeController {
     @Consumes(MediaType.APPLICATION_JSON)
 
     public Response login(Employee employee) {
+
+        System.out.println(employee.getEmail());
+        System.out.println(employee.getPassword());
+
         Employee loggedInEmployee = EmployeeService.login(employee);
 
         if(loggedInEmployee == null)
