@@ -3,7 +3,6 @@ import jakarta.persistence.*;
 import java.util.List;
 
 @Entity
-
 public class Employee {
     @Id
     private int employee_id;
